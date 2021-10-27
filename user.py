@@ -15,7 +15,8 @@ class User:
         return self
     # display balance
     def display_user_balance(self):	
-        return"User: "+self.name+", Balance: "+self.account_balance
+        print("Name;",self.name + ", Balance:",self.account_balance)
+        return self
     # transfer money
     def transfer_money(self, other_user, amount):
         self.account_balance -= amount
@@ -27,21 +28,10 @@ ellen = User("Ellen Merkyl", "ellen@python.com")
 monty = User("Monty Python", "monty@python.com")
 peter = User("Peter Rabbit", "pter.rabbit@python.com")
 
-ellen.make_deposit(400).make_deposit(900).make_deposit(100).make_withdrawal(800)
+ellen.make_deposit(400).make_deposit(900).make_deposit(100).make_withdrawal(800).display_user_balance()
 
-print(ellen.account_balance)
+monty.make_deposit(1400).make_deposit(1400).make_withdrawal(300).make_withdrawal(400).display_user_balance()
 
-monty.make_deposit(1400).make_deposit(1400).make_withdrawal(300).make_withdrawal(400)
+peter.make_deposit(1400).make_withdrawal(300).make_withdrawal(400).make_withdrawal(400).display_user_balance()
 
-print(monty.account_balance)
-
-
-peter.make_deposit(1400).make_withdrawal(300).make_withdrawal(400).make_withdrawal(400)
-
-print(peter.account_balance)
-
-
-monty.transfer_money(ellen,500)
-
-print(ellen.account_balance)
-print(monty.account_balance)
+monty.transfer_money(ellen,500).display_user_balance()
