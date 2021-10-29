@@ -11,17 +11,10 @@
 <body>
     <h1>checkerboard</h1>
     <table id="checkerboard">
-    {% for i in range(2): %}
+    {% for i in range({{num1}}): %}
         <tr class="row">
-            {% for j in range(2): %}
-            <td class="colorOne"></td>
-            <td class="colorTwo"></td>
-            {% endfor %}
-        </tr>
-        <tr class="row">
-            {% for j in range(2): %}
-            <td class="colorTwo"></td>
-            <td class="colorOne"></td>
+            {% for j in range({{num2}}): %}
+            <td class="color{{(i+j)%2+1}}"></td>
             {% endfor %}
         </tr>
     {% endfor %}
