@@ -10,25 +10,19 @@
 <body>
     <table>
         <tr>
-            <td>First Name</td>
-            <td>Last Name</td>
-            <td>Full Name</td>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Full Name</th>
         </tr>
+        {% for users in users%}
         <tr>
-            {% for user in users%}
-                <td>{{user['first_name']}}</td>
-            {% endfor %}
+            <td>{{users['first_name']}}</td>
+            {% set firstName = users['first_name']%}
+            <td>{{users['last_name']}}</td>
+            {% set lastName = users['last_name']%}
+            <td>{{firstName}} {{lastName}}</td>
         </tr>
-        <tr>
-            {% for user in users%}
-                <td>{{user['last_name']}}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            {% for user in users%}
-                <td>{{user['first_name'] + user['last_name']}}</td>
-            {% endfor %}
-        </tr>
+        {% endfor %}
     </table>
 </body>
 </html>
