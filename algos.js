@@ -29,15 +29,12 @@
 //  */
 function isPalindrome(str) {
     var newStr = "";
-    for(var i = str.length-1; i >= 0; i--){
-        newStr += str[i];
+    for(var i = 0; i <str.length/2; i++){
+        if(str[i] != str[str.length - (i+1)]){
+            return false
+        }
     }
-    if(newStr === str){
-        return true;
-    }
-    else{
-        return false;
-    }
+    return true
 }
 // console.log(isPalindrome(str3))
 
@@ -69,7 +66,6 @@ function longestPalindromicSubstring(str) {
     for(var i = 0; i < str.length; i++){
         for(var x = i+1; x < str.length; x++){
             var slice= str.slice(i,x)
-            console.log(slice)
             if(isPalindrome(slice)== true && slice.length>pal.length){
                 pal=slice
             }
@@ -77,4 +73,4 @@ function longestPalindromicSubstring(str) {
     }
     return pal
 }
-console.log(longestPalindromicSubstring(str5));
+console.log(longestPalindromicSubstring(str1));
