@@ -6,23 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <table>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Full Name</th>
-        </tr>
-        {% for users in users%}
-        <tr>
-            <td>{{users['first_name']}}</td>
-            {% set firstName = users['first_name']%}
-            <td>{{users['last_name']}}</td>
-            {% set lastName = users['last_name']%}
-            <td>{{firstName}} {{lastName}}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div id="table">
+        <table class="table-striped table-bordered">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Full Name</th>
+            </tr>
+            {% for users in users%}
+            <tr>
+                <td>{{users['first_name']}}</td>
+                {% set firstName = users['first_name']%}
+                <td>{{users['last_name']}}</td>
+                {% set lastName = users['last_name']%}
+                <td>{{firstName}} {{lastName}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 </body>
 </html>
