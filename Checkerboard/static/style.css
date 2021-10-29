@@ -19,4 +19,16 @@ table{
     align-items: center;
 }
 
+.color1{
+    background-color: blueviolet;
+    height: 40px;
+    width: 40px;
+}
+
+.color2{
+    background-color: cornflowerblue;
+    height: 40px;
+    width: 40px;
+}
+
 

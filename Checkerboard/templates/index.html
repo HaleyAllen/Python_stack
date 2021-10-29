@@ -11,15 +11,10 @@
 <body>
     <h1>checkerboard</h1>
     <table id="checkerboard">
-    {% for i in range(0,num1): %}
+    {% for i in range(num1): %}
         <tr class="row">
-            {% for j in range(0,num2): %}
-            <td></td>
-            {% if (i+j) % 2 == 0 %}
-            <td style="background-color: {{color1}};"></td>
-        {% else %}
-            <td style="background-color: {{color2}};"></td>
-        {%  endif %}
+            {% for j in range(num2): %}
+            <td class="color{{(i+j)%2+1}}"></td>
             {% endfor %}
         </tr>
     {% endfor %}
