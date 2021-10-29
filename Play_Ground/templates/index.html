@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        h1{
+            text-align: center;
+        }
+
+        .boxes{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2{
+            border: solid 2px black;
+            height: 150px;
+            width: 150px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+    </style>
+    <h1>Welcome!</h1>
+    <div class="boxes">
+        {% for x in range(0,times): %}
+            <h2 style="background-color: {{color}};"></h2>
+        {% endfor %}
+    </div>
+</body>
+</html>
