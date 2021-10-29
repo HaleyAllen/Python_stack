@@ -12,10 +12,10 @@
 <body>
     <div id="container">
         <h1>Counter</h1>
-        <p>1</p>
+        <p>{{session['count']}}</p>
         <div>
-            <button class="btn-primary buttons">Click</button>
-            <button class="btn-danger buttons">Reset</button>
+            <a href="/" class="btn btn-primary buttons">Click</a>
+            <a href="/reset" class="btn btn-danger buttons">Reset</a>
         </div>
     </div>
 </body>
