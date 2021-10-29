@@ -11,11 +11,11 @@ def onlyThree():
 
 @app.route('/play/<int:times>')
 def howMany(times):
-    return render_template("index.html", times=times )
+    return render_template("index.html", times=times, color="aqua")
 
-@app.route('/play/<int:times>/<color>')
-def howMany(times, color):
-    return render_template("index.html", times=times, color=color )
+@app.route('/play/<int:num>/<color>')
+def changeColor(num, color):
+    return render_template("index.html", num=num, color=color)
 
 if __name__=="__main__":
     app.run(debug=True)
