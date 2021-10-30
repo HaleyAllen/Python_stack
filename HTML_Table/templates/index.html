@@ -20,10 +20,8 @@
             {% for users in users%}
             <tr>
                 <td>{{users['first_name']}}</td>
-                {% set firstName = users['first_name']%}
                 <td>{{users['last_name']}}</td>
-                {% set lastName = users['last_name']%}
-                <td>{{firstName}} {{lastName}}</td>
+                <td>{{users['first_name']}} {{users['last_name']}}</td>
             </tr>
             {% endfor %}
         </table>
