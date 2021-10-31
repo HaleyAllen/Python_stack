@@ -17,6 +17,7 @@ def surveyAnswers_process():
     session['location']=request.form['location']
     session['language']=request.form['language']
     session['description']=request.form['description']
+    session['flavor']=request.form['flavor']
     return redirect('/submitted')
 
 if __name__=="__main__":
