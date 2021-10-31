@@ -1,1 +1,29 @@
 
+*{
+    margin: 0;
+    padding:0;
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    background-color: lightgray;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+#card{
+    width: 400px;
+    height: 250px;
+    margin: 80px;
+    padding:10px;
+    background-color: lightgray;
+}
+
+h1{
+    color: rgb(91,192,222);
+}

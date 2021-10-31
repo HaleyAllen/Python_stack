@@ -5,9 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Document</title>
 </head>
 <body>
-    <h1>Dojo Survey</h1>
+    <div id="container">
+        <div id="card">
+            <h1 class="text-center">Dojo Survey</h1>
+            <p>Name: {{session['name']}}</p>
+            <p>Location: {{session['location']}}</p>
+            <p>Language: {{session['language']}}</p>
+            <p>Description: {{session['description']}}</p>
+        </div>
+    </div>
 </body>
 </html>

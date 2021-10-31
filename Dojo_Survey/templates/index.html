@@ -4,43 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Document</title>
 </head>
 <body>
     <div id="container">
-        <h1>Dojo Survey</h1>
-        <div class="name">
-            <div>
-                <label>Your Name:* </label>
-                <input type="text" name="name" required >
+        <form action="/submitted_process" method="post" class="form">
+            <div class="form-group">
+                <h1 class="text-center">Dojo Survey</h1>
             </div>
-        </div>
-        <div>
-            <label>Dojo Location: </label>
-            <select name="language">
-                <option>Oregon</option>
-                <option>Washington</option>
-                <option>Idaho</option>
-                <option>California</option>
-                <option>Colorado</option>
-            </select>
-        </div>
-        <div>
-            <label>Favorite Language: </label>
-            <select name="language">
-                <option>Java Script</option>
-                <option>HTML</option>
-                <option>CSS</option>
-                <option>Python</option>
-                <option>MERN</option>
-                <option>Java</option>
-            </select>
-        </div>
-        <div>
-            <label for="description">A short description about myself:</label>
-        </div>
-            <textarea name="description" cols="30" rows="3" spellcheck="true"></textarea>
-            <a href="/reset" >Submit</a>
+            <div class="name">
+                <div class="form-group">
+                    <label>Your Name: </label>
+                    <input type="text" name="name" class="form-control" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Dojo Location: </label>
+                <select name="location" class="btn-info dropdown form-control">
+                    <option>Oregon</option>
+                    <option>Washington</option>
+                    <option>Idaho</option>
+                    <option>California</option>
+                    <option>Colorado</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Favorite Language: </label>
+                <select name="language" class="btn-info dropdown form-control">
+                    <option>Java Script</option>
+                    <option>HTML</option>
+                    <option>CSS</option>
+                    <option>Python</option>
+                    <option>MERN</option>
+                    <option>Java</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">A short description about myself:</label>
+                <textarea name="description" class="form-control" cols="30" rows="3" spellcheck="true"></textarea>
+            </div>
+                <button class="btn-info">Submit</button>
+        </form>
     </div>
 </body>
 </html>
