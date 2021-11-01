@@ -6,7 +6,10 @@ class Store:
         self.chains = 4
 
     def add_product(self, attribute, amount):
-        setattr(self,attribute, amount)
+        setattr(Products,attribute, amount)
+
+    def sell_product(self, attribute):
+        delattr(Products,attribute)
 
 
 class Products:
@@ -30,4 +33,4 @@ class Products:
     def update_price_eyeLiner(self,amount):
         self.eyeLiner = amount
 
-Products.add_product()
+Store.add_product(food,"pad thai")
