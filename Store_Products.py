@@ -33,4 +33,6 @@ class Products:
     def update_price_eyeLiner(self,amount):
         self.eyeLiner = amount
 
-Store.add_product(food,"pad thai")
+Store.add_product("pad_thai", "$7.99")
+Store.add_product("smoothie_mix","$9.99")
+Store.add_product("mascara", "$3.99")
