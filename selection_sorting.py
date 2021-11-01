@@ -8,6 +8,6 @@ def selectionSort(list):
        list[filler] = list[maxspot]
        list[maxspot] = temp
 
-nlist = [14,46,43,27,57,41,45,21,70]
-selectionSort(nlist)
-print(nlist)
+list = [8,5,2,6,9,3,1,4,7]
+selectionSort(list)
+print(list)
