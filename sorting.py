@@ -4,7 +4,7 @@ def selectionSort(list):
        for location in range(1,fillslot+1):
            if list[location]>list[maxpos]:
                maxpos = location
-       temp = nlist[fillslot]
+       temp = list[fillslot]
        list[fillslot] = list[maxpos]
        list[maxpos] = temp
 
