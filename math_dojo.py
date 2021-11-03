@@ -15,3 +15,15 @@ print(md.result)
 
 md.subtract(4,2).subtract(8,2).subtract(6,4)
 print(md.result)
+
+
+
+# RESTful ark
+# table_name/id/action
+
+# user/new
+# user/create
+# user/<int:id>
+# user/<int:id>/edit
+# user/<int:id>/update
+# user/<int:id>/delete
