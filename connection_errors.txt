@@ -7,6 +7,8 @@ I chose to make as many errors as i could while creating a table and heres all t
 5: number of erors is not given a data type.
 6: created at is not in `` and its data type should be DATETIME instead of int
 7: adress 1 & 2 are not in `` and there should not be more then one of the same variable.
+8: no primary key given
+9: the crate table doesnt have the ENGINE=InnoDB at the end
 
 create table if not exists errors(
 id int
