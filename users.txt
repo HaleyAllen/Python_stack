@@ -1,0 +1,17 @@
+
+INSERT INTO `Users-schema`.`users` (`id`, `first_name`, `last_name`, `email`) VALUES ('1', 'Christian', 'Allen', 'ca@email.com');
+INSERT INTO `Users-schema`.`users` (`id`, `first_name`, `last_name`, `email`) VALUES ('2', 'Haley', 'Allen', 'ha@email.com');
+INSERT INTO `Users-schema`.`users` (`id`, `first_name`, `last_name`) VALUES ('3', 'Ellen', 'Roberts');
+
+
+SELECT * FROM users;
+
+SELECT * FROM users WHERE email = "ca@email.com";
+
+SELECT * FROM users WHERE id=3;
+
+UPDATE `Users-schema`.`users` SET `last_name` = 'Pancakes' WHERE (`id` = '3');
+
+DELETE FROM `Users-schema`.`users` WHERE (`id` = '2');
+
+SELECT first_name FROM users ORDER BY first_name;
