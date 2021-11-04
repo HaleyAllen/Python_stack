@@ -1,0 +1,17 @@
+
+I chose to make as many errors as i could while creating a table and heres all the mistakes I made.
+1: create table line is in lowercase lettering instead of caps.
+2: the name of the table to create is not in ``
+3: id is not in `` and  there is no id number given.
+4: number of errors is not in `` and does not have _ instead of spaces.
+5: number of erors is not given a data type.
+6: created at is not in `` and its data type should be DATETIME instead of int
+7: adress 1 & 2 are not in `` and there should not be more then one of the same variable.
+
+create table if not exists errors(
+id int
+number of errors
+created_at int
+adress1 char()
+adress2 char()
+)

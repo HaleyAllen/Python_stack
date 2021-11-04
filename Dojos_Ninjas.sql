@@ -7,7 +7,6 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema dojos_ninjas
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `dojos_ninjas` ;
 
 -- -----------------------------------------------------
 -- Schema dojos_ninjas
@@ -35,8 +34,8 @@ CREATE TABLE IF NOT EXISTS `dojos_ninjas`.`ninjas` (
   `first_name` VARCHAR(45) NULL,
   `last_name` VARCHAR(45) NULL,
   `age` INT NULL,
-  `created_at` DATETIME NULL DEFAULT 'now()',
-  `updated_at` DATETIME NULL DEFAULT 'now() on update now()',
+  `created_at` DATETIME NULL DEFAULT now(),
+  `updated_at` DATETIME NULL DEFAULT now() on update now(),
   `dojo_id` INT NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_ninjas_dojo_idx` (`dojo_id` ASC) VISIBLE,
@@ -47,6 +46,35 @@ CREATE TABLE IF NOT EXISTS `dojos_ninjas`.`ninjas` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+SELECT * FROM dojos;
+
+INSERT INTO `dojos_ninjas`.`dojos` (`id`, `name`) VALUES ('1', 'coding_dojo');
+INSERT INTO `dojos_ninjas`.`dojos` (`id`, `name`) VALUES ('2', 'fun_dojo');
+INSERT INTO `dojos_ninjas`.`dojos` (`id`, `name`) VALUES ('3', 'dojo');
+
+DELETE FROM `dojos_ninjas`.`dojos` WHERE (`id` = '1');
+DELETE FROM `dojos_ninjas`.`dojos` WHERE (`id` = '2');
+DELETE FROM `dojos_ninjas`.`dojos` WHERE (`id` = '3');
+
+INSERT INTO `dojos_ninjas`.`dojos` (`id`, `name`) VALUES ('4', 'Dojo_One');
+INSERT INTO `dojos_ninjas`.`dojos` (`id`, `name`) VALUES ('5', 'Dojo_Two');
+INSERT INTO `dojos_ninjas`.`dojos` (`id`, `name`) VALUES ('6', 'Dojo_Three');
+
+INSERT INTO `dojos_ninjas`.`ninjas` (`id`, `first_name`, `last_name`, `age`, `dojo_id`) VALUES ('1', 'Patch', 'Allen', '10','4');
+INSERT INTO `dojos_ninjas`.`ninjas` (`id`, `first_name`, `last_name`, `age`, `dojo_id`) VALUES ('2', 'Pumpkin', 'Allen', '2','4');
+INSERT INTO `dojos_ninjas`.`ninjas` (`id`, `first_name`, `last_name`, `age`, `dojo_id`) VALUES ('3', 'Max', 'Allen', '1','4');
+
+INSERT INTO `dojos_ninjas`.`ninjas` (`id`, `first_name`, `last_name`, `age`, `dojo_id`) VALUES ('4', 'Shanda', 'Hamilton', '31','5');
+INSERT INTO `dojos_ninjas`.`ninjas` (`id`, `first_name`, `last_name`, `age`, `dojo_id`) VALUES ('5', 'Larissa', 'Roberts', '30','5');
+INSERT INTO `dojos_ninjas`.`ninjas` (`id`, `first_name`, `last_name`, `age`, `dojo_id`) VALUES ('6', 'Ellen', 'Roberts', '25','5');
+
+INSERT INTO `dojos_ninjas`.`ninjas` (`id`, `first_name`, `last_name`, `age`, `dojo_id`) VALUES ('7', 'Christian', 'Allen', '25','6');
+INSERT INTO `dojos_ninjas`.`ninjas` (`id`, `first_name`, `last_name`, `age`, `dojo_id`) VALUES ('8', 'Fred', 'Roberts', '56','6');
+INSERT INTO `dojos_ninjas`.`ninjas` (`id`, `first_name`, `last_name`, `age`, `dojo_id`) VALUES ('9', 'Lila', 'Roberts', '52','6');
+
+SELECT * FROM `ninjas` WHERE dojo_id = 4;
+SELECT * FROM `ninjas` WHERE dojo_id = 6;
+SELECT id=4 FROM `dojos`;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
